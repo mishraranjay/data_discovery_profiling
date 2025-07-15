@@ -1,0 +1,6 @@
+pandas
+ibm_db
+ibm_db_dbi
+logging
+plotly
+nltk
