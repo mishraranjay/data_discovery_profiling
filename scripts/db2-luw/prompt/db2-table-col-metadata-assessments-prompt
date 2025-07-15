@@ -1,0 +1,27 @@
+Prompt for SQL Query Generation:
+Objective: Generate a SQL query for DB2 LUM to perform a comprehensive analysis of table-level metadata in a Db2 database. This query will extract detailed information about each column in the tables, including column definitions, constraints, and statistical estimates.
+
+Requirements:
+
+1. Column Definitions:
+
+Extract the following details for each column:
+The name of the column.
+The data type of the column.
+The length of the column.
+Indicates if the column allows null values.
+The count of null or empty values in the column.
+The estimated number of distinct values in the column.
+The default value of the column, if any.
+The average length of values stored in the column.
+The maximum estimated value stored in the column.
+The minimum estimated value stored in the column.
+Indicates if the column is an identity column.
+Indicates if the column is hidden.
+The description of the column from the schema.
+
+2. Constraint Information:
+
+Extract details about constraints involving the column:
+The name of the constraint the column participates in.
+The position of the column within the key constraint.

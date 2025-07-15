@@ -1,0 +1,22 @@
+Objective: Generate a SQL query to perform a comprehensive assessment of table metadata in a Db2 database. This query will extract detailed information about each table, including replication settings, row estimates, column counts, and constraints.
+
+Requirements:
+
+1. Table Metadata Extraction:
+
+Extract the following details for each table:
+The schema to which the table belongs.
+The name of the table.
+Indicates if data capture for replication is enabled.
+The estimated number of rows in the table.
+The number of columns in the table.
+The creation timestamp of the table.
+The last modification timestamp of the table.
+Indicates if the table is clustered.
+The compression setting of the table.
+Indicates if the table is in append mode.
+Lists the primary key columns of the table.
+Lists the unique constraints on the table.
+The number of check constraints on the table.
+Lists the parent tables if the table is part of a relationship.
+Lists the child tables if the table is part of a relationship.

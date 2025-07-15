@@ -1,0 +1,37 @@
+Prompt for Code Generation
+Objective: Create a Python script to execute SQL files against a DB2 database and save the results as CSV files.
+
+Requirements:
+
+1. Imports and Setup:
+
+Import necessary libraries: os, pandas, and ibm_db.
+Ensure pandas displays all columns and adjusts column width for better readability.
+
+2. Database Connection:
+
+Define a connection string for a DB2 database with placeholders for hostname and password.
+Use ibm_db to establish a connection to the database.
+
+3. Directory Paths:
+
+Define input and output directories for SQL files and result CSVs.
+input  = /Volumes/workspace/default/sql
+ouput = /Volumes/workspace/default/output
+
+4. SQL Execution:
+
+Iterate over all .sql files in the specified directory.
+For each file:
+Read the SQL query.
+Execute the query using ibm_db.
+Fetch results and store them in a pandas DataFrame.
+Save the DataFrame to a CSV file in the output directory.
+
+5. Error Handling:
+
+Implement try-except blocks to handle and log any errors during SQL execution.
+
+6. Connection Closure:
+
+Ensure the database connection is closed after processing all files.
