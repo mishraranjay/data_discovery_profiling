@@ -1,4 +1,4 @@
-Objective: Generate a SQL query to perform a comprehensive assessment of table metadata in a Db2 database. This query will extract detailed information about each table, including replication settings, row estimates, column counts, and constraints.
+Objective: Generate a SQL query to perform a comprehensive assessment of table metadata in a Db2 LUW database. This query will extract detailed information about each table, including replication settings, row estimates, column counts, and constraints.
 
 Requirements:
 
