@@ -21,8 +21,7 @@
 -- TODO -  LOAD SAMPLE DB - HAVE OPTION TO LOAD SAMPLE OR NOT. IF SAMPLE LOADED don't create custom DB
   SELECT
     T.TABSCHEMA               AS SCHEMA_NAME,
-    T.TABNAME                 AS ALIAS_NAME,
-    T.BASE_TABNAME            AS TABLE_NAME,
+    T.TABNAME                 AS TABLE_NAME,
     T.DATACAPTURE             AS REPLICATION_ENABLED,
     T.CARD                    AS EST_ROW_COUNT,
     T.COLCOUNT                AS COLUMN_COUNT,
