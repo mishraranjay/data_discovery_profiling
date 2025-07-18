@@ -17,9 +17,7 @@
   -- 1.13 -> Number of check constraints (CHECKCOUNT)
   -- 1.14 -> Number of parent tables linked via foreign keys (PARENTS)
   -- 1.15 -> Number of child tables depending on this table (CHILDREN)
---TODO -  SELECT DISTINCT TABSCHEMA, TABNAME FROM SYSCAT.DATAPARTITIONS WHERE TABNAME  ='DEPARTMENT'
--- TODO -  LOAD SAMPLE DB - HAVE OPTION TO LOAD SAMPLE OR NOT. IF SAMPLE LOADED don't create custom DB
-  SELECT
+SELECT
     T.TABSCHEMA               AS SCHEMA_NAME,
     T.TABNAME                 AS TABLE_NAME,
     T.DATACAPTURE             AS REPLICATION_ENABLED,
@@ -33,12 +31,18 @@
     T.KEYCOLUMNS              AS PRIMARY_KEY_COLUMNS,
     T.KEYUNIQUE               AS UNIQUE_CONSTRAINTS,
     T.CHECKCOUNT              AS CHECK_CONSTRAINTS,
-    T.PARENTS                 AS PARENT_TABLES,
-    T.CHILDREN                AS CHILD_TABLES
-  FROM
+    T.PARENTS                 AS PARENT_TABLES_COUNT,
+    T.CHILDREN                AS CHILD_TABLES_COUNT,
+    R.CONSTNAME               AS FK_NAME,
+    R.REFTABNAME              AS PARENT_TABLE
+FROM
     SYSCAT.TABLES T
-  WHERE
+LEFT JOIN
+    SYSCAT.REFERENCES R
+    ON T.TABSCHEMA = R.TABSCHEMA
+    AND T.TABNAME = R.TABNAME
+WHERE
     T.TYPE = 'T'
     AND T.TABSCHEMA NOT LIKE 'SYS%'
-  ORDER BY
+ORDER BY
     T.TABSCHEMA, T.TABNAME;
